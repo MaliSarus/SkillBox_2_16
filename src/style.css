@@ -1,0 +1,45 @@
+textarea{
+    resize: none;
+    margin-bottom: 5px;
+}
+
+.comments{
+    margin-top: 50px;
+}
+
+ul{
+    margin-top: 30px;
+    padding: 0;
+}
+
+ul li{
+    list-style: none;
+    padding: 10px 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+.info{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info p{
+    font-weight: 600;
+}
+
+.info time{
+    font-size: 14;
+    color: gray;
+}
+
+.text{
+    flex-basis: 100%;
+}
