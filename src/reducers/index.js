@@ -6,16 +6,26 @@ const comments =  (state, action) => {
                 date:`${action.date.getHours()}:${action.date.getMinutes()}`,
                 user: action.user
             };
-            state.push(newComm);
-            localStorage.setItem('commentList',JSON.stringify(state));
+            localStorage.setItem('commentList',JSON.stringify([...state,newComm]));
             return [
-                ...state,
+                ...state,newComm
             ];
 
         case 'DEL_COMM':
-            state.splice(action.index,1);
-            localStorage.setItem('commentList',JSON.stringify(state));
-            return [...state];
+            console.log(state);
+            let newState = state.map((elem, index)=>{
+               if(index !== action.index){
+                   return elem
+               }
+               else{
+                   return
+               }
+            });
+            newState.splice(action.index, 1);
+            console.log(newState);
+            // // // state.splice(action.index,1);
+            localStorage.setItem('commentList',JSON.stringify(newState));
+             return [...newState];
 
         default:
             return state;
